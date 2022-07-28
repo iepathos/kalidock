@@ -3,6 +3,11 @@ volumes:
   metasploit:
     external: true
 
+networks:
+  default:
+    name: vpn
+    external: true
+
 services:
   interactive:
     build: interactive
@@ -11,6 +16,10 @@ services:
       - ./in:/in
       - ./out:/out
       - metasploit:/var/lib/postgresql
+    depends_on:
+      - vpn
+    network_mode: "service:vpn"
+    tty: true
   nmap:
     build: nmap
     volumes:
@@ -27,3 +36,14 @@ services:
       - ./in:/in
       - ./out:/out
       - metasploit:/var/lib/postgresql
+
+  vpn:
+    container_name: vpn
+    image: dperson/openvpn-client
+    cap_add:
+      - net_admin
+    volumes:
+      - ./vpn.ovpn:/vpn/vpn.conf
+    devices:
+      - /dev/net/tun
+    privileged: true
