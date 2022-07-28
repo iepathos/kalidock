@@ -12,6 +12,12 @@ Developed by Glen Baker <iepathos@gmail.com> for personal use
 
 # Tools and Usage
 
+## Interactive Kali Shell
 
-+ enter.sh -- enter an interactive kali container
-+ docker-compose run nmap *args*
+enter an interactive kali container
+
+`./enter.sh`
+
+## Nmap
+
+`docker-compose run nmap *args*`
