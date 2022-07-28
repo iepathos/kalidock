@@ -1,2 +1,3 @@
 #!/bin/bash
-docker run --tty --interactive kalilinux/kali-rolling
+docker-compose up interactive -d
+docker exec -it interactive bash

@@ -1,4 +1,29 @@
 version: "3.9"
+volumes:
+  metasploit:
+    external: true
+
 services:
+  interactive:
+    build: interactive
+    container_name: interactive
+    volumes:
+      - ./in:/in
+      - ./out:/out
+      - metasploit:/var/lib/postgresql
   nmap:
     build: nmap
+    volumes:
+      - ./in:in
+      - ./out:/out
+  john:
+    build: john
+    volumes:
+      - ./in:/in
+      - ./out:/out
+  msf:
+    build: msf
+    volumes:
+      - ./in:/in
+      - ./out:/out
+      - metasploit:/var/lib/postgresql
