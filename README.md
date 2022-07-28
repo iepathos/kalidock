@@ -11,6 +11,10 @@ Some limitations with this approach especially if you need to run some password 
 Developed by Glen Baker <iepathos@gmail.com> for personal use
 
 
+# VPN
+
+Copy openvpn profile to vpn.ovpn, it will be mounted into the vpn client container and networked with the interactive kali container.  Good practice to run behind a vpn, can modify the docker-compose.yml to avoid running the vpn container.
+
 
 # Tools and Usage
 
