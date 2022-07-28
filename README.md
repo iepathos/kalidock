@@ -14,6 +14,8 @@ Developed by Glen Baker <iepathos@gmail.com> for personal use
 
 # Tools and Usage
 
+Needs to be ran once `./create-volumes.sh`
+
 ## Interactive Kali Shell
 
 Enter an interactive kali container with a bunch of default tools installed for general working environment.  Put any files you need to pass into the container into the `in` directory.
