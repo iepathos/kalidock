@@ -18,7 +18,7 @@ services:
       - metasploit:/var/lib/postgresql
     depends_on:
       - vpn
-    network_mode: "service:vpn"
+    # network_mode: "service:vpn"
     tty: true
   nmap:
     build: nmap
